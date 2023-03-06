@@ -267,6 +267,10 @@ class App extends Component {
   componentDidMount = () => {
     this.timerId = setInterval(this.decreaseTime, 1000)
   }
+  
+  componentWillUnmount() {
+    clearInterval(this.timerId)
+  }
 
   decreaseTime = () => {
     this.setState(prevState => ({
